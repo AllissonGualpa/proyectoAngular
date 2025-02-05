@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css'
 })
-export class ContactoComponent {
+export class ContactoComponent { //Agrregue un atributo al controlador de contactos.
     titulo:string="Contactos"
+
+    medios: any[] = [
+      {"texto": "En Twitter"},
+      {"texto": "En Facebook"},
+      {"texto": "Por correo electronico"}
+    ]
 
 }
