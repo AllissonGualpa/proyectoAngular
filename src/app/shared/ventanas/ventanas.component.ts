@@ -1,12 +1,26 @@
 import { Component } from '@angular/core';
+import { Foto } from '../../interfaz/foto';
+import { RecursosService } from '../../servicios/recursos.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-ventanas',
-  imports: [],
+  imports: [HttpClientModule],
+  providers: [RecursosService],
   templateUrl: './ventanas.component.html',
   styleUrl: './ventanas.component.css'
+
 })
+
+
 export class VentanasComponent {
+  fotos: Foto[] = [];
+  constructor(private recursosService: RecursosService){
+    recursosService.obtenerDatos().subscribe(respuesta => {
+      this.fotos = respuesta as Array<Foto>
+    })
+  }
+
   medios:any[]=[
     {
       "ventanaTexto": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet eleifend velit. Nulla accumsan felis et ligula tincidunt, in auctor metus elementum.",
