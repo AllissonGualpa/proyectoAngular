@@ -184,9 +184,16 @@
 
   <app-album></app-album>
 
+  
+    <a type="button" class="btn btn-dark" [routerLink]="'ventanas'">Cartas</a>
 
+    <a type="button" class="btn btn-secondary" [routerLink]="'tabla'">Datos</a>
+
+  
+  <!-- Aquí se mostrarán las páginas según la ruta -->
+  <router-outlet></router-outlet>
+  
   <!--desde aqui-->
-      <app-ventanas></app-ventanas>
 
 </main>
 
